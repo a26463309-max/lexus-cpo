@@ -38,7 +38,7 @@
       if (endpoint && websiteId) {
         const s = document.createElement("script");
         s.defer = true;
-        s.src = `${endpoint.replace(/\\/+$/, "")}/umami`;
+        s.src = `${endpoint.replace(/\/+$/, "")}/umami`;
         s.dataset.websiteId = websiteId;
         document.body.appendChild(s);
       }

@@ -1,5 +1,6 @@
 export const ENV = {
   appId: process.env.VITE_APP_ID ?? "",
+  adminPassword: process.env.ADMIN_PASSWORD ?? "881231",
   cookieSecret: process.env.JWT_SECRET ?? "",
   databaseUrl: process.env.DATABASE_URL ?? "",
   oAuthServerUrl: process.env.OAUTH_SERVER_URL ?? "",

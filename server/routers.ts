@@ -25,6 +25,7 @@ import {
 } from "./db";
 import { storagePut } from "./storage";
 import { nanoid } from "nanoid";
+import { ENV } from "./_core/env";
 
 export const appRouter = router({
   system: systemRouter,
@@ -33,7 +34,7 @@ export const appRouter = router({
     login: publicProcedure
       .input(z.object({ password: z.string().min(1) }))
       .mutation(async ({ input, ctx }) => {
-        if (input.password !== "881231") {
+        if (input.password !== ENV.adminPassword) {
           return { success: false, message: "密碼錯誤" } as const;
         }
 
